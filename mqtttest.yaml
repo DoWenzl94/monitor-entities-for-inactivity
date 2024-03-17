@@ -1,0 +1,47 @@
+blueprint:                                                                                                                                                         
+  name: Monitor Entities for Inactivity                                                                                                                            
+  description: Notifies when entities have been inactive for a specified period of time.                                                                           
+  domain: automation                                                                                                                                               
+  input:                                                                                                                                                           
+    entities:                                                                                                                                                      
+      name: Monitoring Entities                                                                                                                                    
+      description: The entities to monitor for inactivity.                                                                                                         
+      selector:                                                                                                                                                    
+        entity:                                                                                                                                                    
+          multiple: true                                                                                                                                           
+    timeout:                                                                                                                                                       
+      name: Timeout                                                                                                                                                
+      description: The duration for the timeout.                                                                                                                   
+      default: 24                                                                                                                                                  
+      selector:                                                                                                                                                    
+        number:                                                                                                                                                    
+          unit_of_measurement: hours                                                                                                                               
+          min: 0.01                                                                                                                                                
+          max: 168                                                                                                                                                 
+          step: 0.01                                                                                                                                               
+    actions:                                                                                                                                                       
+      name: Actions                                                                                                                                                
+      description: Specify the action to be executed when entities are inactive. Specify the action to be executed when entities are inactive. -                   
+        Use {{entity_name}} and {{defined_timeout}} as variables.                                                                                                  
+      selector:                                                                                                                                                    
+        action: {}                                                                                                                                                 
+                                                                                                                                                                   
+variables:                                                                                                                                                         
+  defined_timeout: !input timeout                                                                                                                                  
+                                                                                                                                                                   
+trigger:                                                                                                                                                           
+  platform: state                                                                                                                                                  
+  entity_id: !input entities                                                                                                                                       
+  to: null                                                                                                                                                         
+  for:                                                                                                                                                             
+    hours: !input timeout                                                                                                                                          
+    minutes: 0                                                                                                                                                     
+    seconds: 0                                                                                                                                                     
+                                                                                                                                                                   
+action:                                                                                                                                                            
+- variables:                                                                                                                                                       
+    entity_name: "{{ trigger.to_state.attributes.friendly_name }}"                                                                                                 
+- choose: []
+  default: !input 'actions'                                                                                                                                        
+                                                                                                                                                                   
+mode: single  
