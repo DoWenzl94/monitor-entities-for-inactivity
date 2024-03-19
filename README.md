@@ -24,7 +24,8 @@ This blueprint for Home Assistant allows you to monitor entities for inactivity 
 
 - **Monitoring Entities**: Select the entities to monitor for inactivity.
 - **Timeout**: Specify the duration after which entities are considered inactive.
-- **Actions**: Specify the actions to be executed when entities are inactive. Use `{{ entity_name }}` and `{{ defined_timeout }}` as variables in your actions.
+- **Actions**: Specify the actions to be executed when entities are inactive. Use `{{ entity_name }}` and 
+  `{{ defined_timeout }}` as variables in your actions.
 
 ## Tested with MQTT Sensors
 
