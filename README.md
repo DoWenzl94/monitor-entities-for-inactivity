@@ -31,4 +31,4 @@ This blueprint for Home Assistant allows you to monitor entities for inactivity 
 
 This blueprint has been tested with MQTT sensors, including temperature sensors, motion sensors, and thermostats.
 
-<a href="https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2FDoWenzl94%2Fblueprints-for-HA%2Fblob%2Fmain%2Fmqtttest.yaml" target="_blank" rel="noreferrer noopener"><img src="https://my.home-assistant.io/badges/blueprint_import.svg" alt="Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled." /></a>
+<a href="https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2FDoWenzl94%2Fmonitor-entities-for-inactivity%2Fblob%2Fmain%2Fmqtttest.yaml" target="_blank" rel="noreferrer noopener"><img src="https://my.home-assistant.io/badges/blueprint_import.svg" alt="Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled." /></a>
